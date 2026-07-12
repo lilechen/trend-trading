@@ -39,6 +39,7 @@ A Python toolkit for trend stage analysis. Pulls live market data, runs a docume
 - [Risk Disclaimer](#risk-disclaimer)
 - [Related Projects](#related-projects)
 - [License](#license)
+- [Disclaimer](#disclaimer)
 
 ---
 
@@ -353,6 +354,18 @@ Read the corresponding spec in [research-to-backtest](https://github.com/lileche
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+## Disclaimer
+
+This project is for personal learning, research, and educational purposes only. **It does not constitute investment advice, trading recommendations, or financial opinion.**
+
+- All trading systems, research materials, rules, and code examples referenced in this project come from public literature or open data, used for educational purposes only
+- Any analysis output, rule interpretation, or backtest result **does not constitute advice to buy or sell any specific security**
+- Real trading involves significant risk, including the potential loss of all principal
+- The authors and contributors **are not liable for any direct or indirect losses arising from use of this project**
+- Verify all rules and data independently before use, and consult a qualified financial advisor
+
+**Past performance does not guarantee future results. Trading involves risk. Trade at your own risk.**
 
 ---
 
