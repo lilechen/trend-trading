@@ -23,6 +23,7 @@ A Python toolkit for trend stage analysis. Pulls live market data, runs a docume
 
 ## Table of Contents
 
+- [Background: What is Trend Following?](#background-what-is-trend-following)
 - [The Problem](#the-problem)
 - [The Solution](#the-solution)
 - [Live Output](#live-output)
@@ -38,6 +39,51 @@ A Python toolkit for trend stage analysis. Pulls live market data, runs a docume
 - [Risk Disclaimer](#risk-disclaimer)
 - [Related Projects](#related-projects)
 - [License](#license)
+
+---
+
+## Background: What is Trend Following?
+
+**Trend Following (a.k.a. CTA — Commodity Trading Advisor)** is a class of systematic trading strategies: identify the medium- to long-term direction of an asset's price, hold in the direction of the trend, exit when the trend reverses. The core creed is **"cut losses short, let winners run"** — the opposite of what most people do instinctively.
+
+### A brief history (simplified)
+
+- **1940s–70s**: Richard Donchian develops moving-average breakout systems, widely considered the father of trend following.
+- **1970s**: John W. Henry systematizes trend-following for managed futures, eventually buys the Boston Red Sox; Bill Dunn founds Dunn Capital, peak AUM > $10B.
+- **1983**: The Turtle Trading Experiment (Richard Dennis / Bill Eckhardt) proves trend rules **can be taught** — 21 novices with a rule-based system earned $175M in 4 years and launched the modern "systematic trading" mindset.
+- **1987–2000**: CTA industry boom; Man Group, AHL (est. 1987), Winton Group become mainstream hedge fund categories.
+- **2008**: In the GFC, S&P 500 fell 38% while the SG Trend Index rose 14%+ — the "crisis alpha" of trend following became widely known.
+- **2010s–2020s**: Industry grows from ~$300B (2010) to >$400B (2024), but the 2015–2019 trend-less period frustrates many CTAs, leading to multi-strategy / shorter-frequency hybrids.
+
+### Why it works
+
+Researchers (see [research-to-backtest](https://github.com/lilechen/research-to-backtest) `examples/Clenow/`) attribute trend-following's edge to:
+
+1. **Behavioral biases**: investors over-react to short-term news, take profits too early, delay stops — creating **price persistence** rather than mean reversion.
+2. **Structured risk management**: fixed-% stops + ATR sizing → many small losses, few large wins. **Long-term positive expectancy** comes from a handful of large trends.
+3. **Multi-market diversification**: trading 50–100 contracts across equities / commodities / FX / rates simultaneously hedges single-market blowups.
+4. **Crisis alpha**: during equity crashes, trend strategies often catch reverse trends in bonds / FX / commodities.
+
+### Classic books
+
+| Book | Angle |
+|---|---|
+| Andreas F. Clenow, *Following the Trend* | Engineering of modern CTA trend-following; Ch.4 is what this tool encodes |
+| Michael Covel, *Trend Following* | Philosophy and practitioner interviews |
+| Robert Carver, *Systematic Trading* | Statistical foundations, vol-targeting position sizing |
+| Bill Dunn, *How Markets Work* | CTA practitioner interviews |
+| Curtis Faith, *Way of the Turtle* | First-hand Turtle experiment account |
+| Stan Weinstein, *Secrets for Profiting in Bull and Bear Markets* | 4-stage + 30-week MA, "retail" view of trends |
+
+### Honest limits
+
+Trend following is **not a holy grail**:
+- **Choppy markets = persistent drawdown**: 2015–2019 was 5 years of mediocre-to-negative returns for most CTAs.
+- **Whipsaws and false breakouts** are common; discipline is required to sit through them.
+- **"Crisis alpha" is not free** — it's the premium paid for surviving choppy years.
+- **Scale decay**: strategy capacity is finite; $10B+ funds erode their own edge.
+
+> Clenow provides a 30-year sector attribution + 2002–2021 year-by-year returns table in Ch.5 (see `research-to-backtest/examples/Clenow/Clenow.trading-system.md §13`) — useful as evidence for whether to use this approach.
 
 ---
 

@@ -23,6 +23,7 @@ A Python toolkit for trend stage analysis. Pulls live market data, runs a docume
 
 ## 目录
 
+- [背景:什么是趋势交易](#背景什么是趋势交易)
 - [问题](#问题)
 - [解决](#解决)
 - [实测输出](#实测输出)
@@ -38,6 +39,51 @@ A Python toolkit for trend stage analysis. Pulls live market data, runs a docume
 - [风险提示](#风险提示)
 - [相关项目](#相关项目)
 - [许可证](#许可证)
+
+---
+
+## 背景:什么是趋势交易
+
+**趋势跟踪(Trend Following / CTA)** 是一类系统化交易策略:识别资产价格的中长期方向,在趋势方向持仓,趋势反转时平仓。它的核心信条是**"截断亏损、让利润奔跑"(cut losses short, let winners run)**——大多数人反着做。
+
+### 历史脉络(简化)
+
+- **1940s-70s**:理查德·唐奇安(Richard Donchian)开发移动平均突破系统,被视为趋势跟踪之父。
+- **1970s**:约翰·W·亨利(John W. Henry)将系统化趋势跟踪商品基金化,后续创办波士顿红袜队;比尔·邓恩(Bill Dunn)创立邓恩资本管理,管理规模峰值超 $10B。
+- **1983**:海龟交易实验(Richard Dennis / Bill Eckhardt),证明趋势规则**可教**——一群无经验学员用规则化系统 4 年赚了 $175M,催生「交易可以系统化」的现代观念。
+- **1987-2000**:CTA 行业爆发,Man Group、AHL(1987 年起)、Winton Group 等成为主流对冲基金类别。
+- **2008**:金融危机中,S&P 500 跌 38% 而 SG Trend Index 涨 14%+,趋势跟踪的「危机 alpha」效应被广泛认知。
+- **2010s-2020s**:行业从 $300B(2010)增长到 $400B+(2024),但 2015-2019 长期无趋势期让许多 CTA 表现平淡,行业开始纳入短期/中频策略做混合。
+
+### 为什么它有效
+
+学界(详见 [research-to-backtest](https://github.com/lilechen/research-to-backtest) 的 `examples/Clenow/`)把趋势跟踪的有效性归因于:
+
+1. **行为偏差**:投资者过度反应短期信息、过早锁定利润、延迟止损,造成价格**惯性**而非均值回归。
+2. **风险管理结构化**:固定 % 止损 + ATR sizing 让小亏远多于大赢,**长期正期望**靠少数大趋势覆盖。
+3. **多市场分散**:同时交易 50-100 个合约(股、商、汇、利),单市场失效被组合对冲。
+4. **危机对冲**:股市崩盘时,趋势策略常在其他市场(债、汇、商)捕捉到反向趋势,实现"危机 alpha"。
+
+### 经典著作
+
+| 著作 | 角度 |
+|---|---|
+| Andreas F. Clenow《Following the Trend》| 现代 CTA 趋势跟踪的工程化拆解,本工具编码的就是 Ch.4 |
+| Michael Covel《Trend Following》| 趋势跟踪哲学与名人访谈 |
+| Robert Carver《Systematic Trading》| 系统化交易的统计学基础,波动率目标仓位 |
+| Bill Dunn《How Markets Work》| CTA 实操访谈 |
+| Curtis Faith《Way of the Turtle》| 海龟实验一手记录 |
+| Stan Weinstein《Secrets for Profiting in Bull and Bear Markets》| 4 阶段 + 30 周均线,趋势的"散户视角" |
+
+### 趋势跟踪的局限
+
+诚实地说,趋势跟踪**不是圣杯**:
+- **横盘市持续亏损**:2015-2019 多数 CTA 经历 5 年低回报甚至小幅回撤。
+- **假突破与回撤**:常见,需纪律承受。
+- **"危机 alpha" 不免费**:它来自长期横盘市的"保费",不是免费午餐。
+- **规模衰减**:策略容量有限,$10B+ 的基金进场会蚕食自己的优势。
+
+> Clenow 在 Ch.5 给了 30 年板块归因 + 2002-2021 逐年收益表(见 `research-to-backtest/examples/Clenow/Clenow.trading-system.md §13`),可作为是否要用这套方法的参考依据。
 
 ---
 
