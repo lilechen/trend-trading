@@ -1,0 +1,1 @@
+"""Data layer: market data fetching and local caching."""

@@ -1,0 +1,1 @@
+"""Unit tests for trend_trading package."""

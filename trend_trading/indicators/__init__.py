@@ -1,0 +1,1 @@
+"""Technical indicators used by trend systems."""
