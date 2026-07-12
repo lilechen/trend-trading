@@ -2,6 +2,8 @@
 
 # trend-trading
 
+<img src="docs/assets/banner.svg" alt="trend-trading banner" width="100%"/>
+
 **Given a ticker, output where it currently is in its trend cycle.**
 
 A Python toolkit for trend stage analysis. Pulls live market data, runs a documented trading system (currently Clenow CTA), and outputs where the instrument is in its trend cycle right now — with regime, entry/exit levels, ATR-based sizing across 4 risk levels.

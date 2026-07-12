@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="1280" height="320" role="img" aria-label="trend-trading banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="trend" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3fb950" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3fb950" stop-opacity="1"/>
+    </linearGradient>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.7" fill="#30363d"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="320" fill="url(#bg)"/>
+  <rect width="1280" height="320" fill="url(#dots)" opacity="0.5"/>
+
+  <!-- Donchian High 100d (top channel) -->
+  <polyline points="620,80 680,72 740,68 800,60 860,55 920,48 980,42 1040,38 1100,32 1160,28 1220,22"
+            stroke="#58a6ff" stroke-width="1.2" fill="none" stroke-dasharray="4,4" opacity="0.45"/>
+  <!-- Donchian Low 100d (bottom channel) -->
+  <polyline points="620,260 680,250 740,245 800,235 860,220 920,205 980,195 1040,180 1100,165 1160,150 1220,135"
+            stroke="#58a6ff" stroke-width="1.2" fill="none" stroke-dasharray="4,4" opacity="0.45"/>
+
+  <!-- EMA50 (red, slower) -->
+  <polyline points="620,210 680,202 740,195 800,180 860,168 920,155 980,142 1040,130 1100,118 1160,105 1220,92"
+            stroke="#f85149" stroke-width="1.5" fill="none" opacity="0.55" stroke-dasharray="2,3"/>
+  <!-- EMA100 (red, slower) - below EMA50 to show bearish regime -->
+  <polyline points="620,232 680,225 740,220 800,210 860,200 920,188 980,175 1040,165 1100,152 1160,140 1220,128"
+            stroke="#f85149" stroke-width="1.5" fill="none" opacity="0.55" stroke-dasharray="2,3"/>
+
+  <!-- Candlesticks (the "chart" feel) - 8 candles trending up -->
+  <g>
+    <!-- candle 1 (down) -->
+    <line x1="630" y1="225" x2="630" y2="245" stroke="#f85149" stroke-width="1"/>
+    <rect x="624" y="228" width="12" height="14" fill="#f85149" opacity="0.85"/>
+    <!-- candle 2 (up) -->
+    <line x1="660" y1="210" x2="660" y2="232" stroke="#3fb950" stroke-width="1"/>
+    <rect x="654" y="212" width="12" height="18" fill="#3fb950" opacity="0.85"/>
+    <!-- candle 3 (up) -->
+    <line x1="690" y1="195" x2="690" y2="220" stroke="#3fb950" stroke-width="1"/>
+    <rect x="684" y="198" width="12" height="20" fill="#3fb950" opacity="0.85"/>
+    <!-- candle 4 (down, pullback) -->
+    <line x1="720" y1="185" x2="720" y2="215" stroke="#f85149" stroke-width="1"/>
+    <rect x="714" y="190" width="12" height="22" fill="#f85149" opacity="0.85"/>
+    <!-- candle 5 (up, breakout) -->
+    <line x1="750" y1="155" x2="750" y2="195" stroke="#3fb950" stroke-width="1"/>
+    <rect x="744" y="160" width="12" height="32" fill="#3fb950" opacity="0.85"/>
+    <!-- candle 6 (up) -->
+    <line x1="780" y1="135" x2="780" y2="170" stroke="#3fb950" stroke-width="1"/>
+    <rect x="774" y="140" width="12" height="28" fill="#3fb950" opacity="0.85"/>
+    <!-- candle 7 (up small) -->
+    <line x1="810" y1="120" x2="810" y2="150" stroke="#3fb950" stroke-width="1"/>
+    <rect x="804" y="128" width="12" height="20" fill="#3fb950" opacity="0.85"/>
+    <!-- candle 8 (up) -->
+    <line x1="840" y1="100" x2="840" y2="135" stroke="#3fb950" stroke-width="1"/>
+    <rect x="834" y="105" width="12" height="28" fill="#3fb950" opacity="0.85"/>
+  </g>
+
+  <!-- Big "up trend" line connecting candle highs (the hero arc) -->
+  <polyline points="640,200 700,180 760,140 820,150 880,120 940,100 1000,80 1060,60 1120,50 1180,30 1240,20"
+            stroke="url(#trend)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Arrow head at end of trend line -->
+  <polygon points="1240,20 1228,8 1232,28 1240,20 1252,8" fill="#3fb950"/>
+
+  <!-- Trend label -->
+  <g font-family="ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace" font-size="10" fill="#3fb950" opacity="0.85">
+    <text x="1252" y="14">↗ trend</text>
+  </g>
+
+  <!-- Channel labels (right edge) -->
+  <g font-family="ui-monospace, 'SF Mono', monospace" font-size="10" fill="#58a6ff" opacity="0.55">
+    <text x="1220" y="18" text-anchor="end">Donchian High 100d</text>
+    <text x="1220" y="140" text-anchor="end">Donchian Low 100d</text>
+  </g>
+
+  <!-- Title block (left side) -->
+  <g font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <text x="60" y="100" font-size="56" font-weight="800" fill="#f0f6fc" letter-spacing="-1.5">trend-trading</text>
+    <text x="62" y="148" font-size="20" font-weight="400" fill="#8b949e">给一个代码,告诉你现在处于趋势的哪一阶段</text>
+  </g>
+
+  <!-- Sample CLI command (monospace) -->
+  <g font-family="ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace" font-size="15">
+    <text x="62" y="230" fill="#7ee787">$ python -m trend_trading analyze 600519</text>
+  </g>
+
+  <!-- Output hint -->
+  <g font-family="ui-monospace, 'SF Mono', monospace" font-size="12" fill="#58a6ff" opacity="0.7">
+    <text x="62" y="258">→ Stage 2 · trend_down · EMA50 &lt; EMA100 · 4 risk levels · ATR20 sizing</text>
+  </g>
+
+  <!-- Tag corner (top-left small) -->
+  <g font-family="ui-monospace, 'SF Mono', monospace" font-size="11" fill="#6e7681">
+    <text x="62" y="42">MIT · v0.1 · python 3.10+ · akshare · yfinance</text>
+  </g>
+
+  <!-- Bottom border accent (1px line) -->
+  <line x1="0" y1="319" x2="1280" y2="319" stroke="#3fb950" stroke-width="2" opacity="0.6"/>
+</svg>
