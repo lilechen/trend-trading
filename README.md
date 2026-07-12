@@ -2,7 +2,7 @@
 
 # trend-trading
 
-<img src="docs/assets/banner.svg" alt="trend-trading banner" width="100%"/>
+<img src="docs/assets/banner.png" alt="trend-trading banner" width="100%"/>
 
 **给一个代码,告诉你现在处于趋势的哪一阶段。**
 

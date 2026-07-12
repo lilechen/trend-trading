@@ -2,7 +2,7 @@
 
 # trend-trading
 
-<img src="docs/assets/banner.svg" alt="trend-trading banner" width="100%"/>
+<img src="docs/assets/banner.png" alt="trend-trading banner" width="100%"/>
 
 **Given a ticker, output where it currently is in its trend cycle.**
 
